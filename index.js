@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const admin = require('firebase-admin');
 const bodyParser = require('body-parser');
@@ -10,7 +11,7 @@ admin.initializeApp({
 });
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
